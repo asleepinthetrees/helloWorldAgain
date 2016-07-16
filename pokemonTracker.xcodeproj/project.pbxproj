@@ -13,6 +13,9 @@
 		367FE4111D3AE17F0012A56F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 367FE4101D3AE17F0012A56F /* Assets.xcassets */; };
 		367FE4141D3AE17F0012A56F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367FE4121D3AE17F0012A56F /* LaunchScreen.storyboard */; };
 		367FE41F1D3AE17F0012A56F /* pokemonTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE41E1D3AE17F0012A56F /* pokemonTrackerTests.swift */; };
+		367FE42E1D3AEEC00012A56F /* mapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE42D1D3AEEC00012A56F /* mapAnnotation.swift */; };
+		367FE4301D3AEFC30012A56F /* pokemonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE42F1D3AEFC30012A56F /* pokemonAnnotation.swift */; };
+		367FE4321D3AF2F40012A56F /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4311D3AF2F40012A56F /* VCMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 		367FE41A1D3AE17F0012A56F /* pokemonTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokemonTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		367FE41E1D3AE17F0012A56F /* pokemonTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemonTrackerTests.swift; sourceTree = "<group>"; };
 		367FE4201D3AE17F0012A56F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		367FE4291D3AE18B0012A56F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		367FE42D1D3AEEC00012A56F /* mapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapAnnotation.swift; sourceTree = "<group>"; };
+		367FE42F1D3AEFC30012A56F /* pokemonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pokemonAnnotation.swift; sourceTree = "<group>"; };
+		367FE4311D3AF2F40012A56F /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,7 @@
 		367FE3FD1D3AE17F0012A56F = {
 			isa = PBXGroup;
 			children = (
+				367FE4291D3AE18B0012A56F /* MapKit.framework */,
 				367FE4081D3AE17F0012A56F /* pokemonTracker */,
 				367FE41D1D3AE17F0012A56F /* pokemonTrackerTests */,
 				367FE4071D3AE17F0012A56F /* Products */,
@@ -79,10 +87,13 @@
 			children = (
 				367FE4091D3AE17F0012A56F /* AppDelegate.swift */,
 				367FE40B1D3AE17F0012A56F /* ViewController.swift */,
+				367FE4311D3AF2F40012A56F /* VCMapView.swift */,
+				367FE42F1D3AEFC30012A56F /* pokemonAnnotation.swift */,
 				367FE40D1D3AE17F0012A56F /* Main.storyboard */,
 				367FE4101D3AE17F0012A56F /* Assets.xcassets */,
 				367FE4121D3AE17F0012A56F /* LaunchScreen.storyboard */,
 				367FE4151D3AE17F0012A56F /* Info.plist */,
+				367FE42D1D3AEEC00012A56F /* mapAnnotation.swift */,
 			);
 			path = pokemonTracker;
 			sourceTree = "<group>";
@@ -197,7 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				367FE42E1D3AEEC00012A56F /* mapAnnotation.swift in Sources */,
 				367FE40C1D3AE17F0012A56F /* ViewController.swift in Sources */,
+				367FE4321D3AF2F40012A56F /* VCMapView.swift in Sources */,
+				367FE4301D3AEFC30012A56F /* pokemonAnnotation.swift in Sources */,
 				367FE40A1D3AE17F0012A56F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
