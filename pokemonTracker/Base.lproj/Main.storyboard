@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,22 +22,36 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P6p-6q-16A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PokeballPinHolder" translatesAutoresizingMaskIntoConstraints="NO" id="Lwi-6F-F6v">
+                                <rect key="frame" x="20" y="20" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="Bc5-N7-Cb6"/>
+                                    <constraint firstAttribute="height" constant="54" id="evE-zn-FYh"/>
+                                    <constraint firstAttribute="width" secondItem="Lwi-6F-F6v" secondAttribute="height" multiplier="1:1" id="zMN-9g-W2E"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="P6p-6q-16A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Gm-VO-8WG"/>
                             <constraint firstItem="P6p-6q-16A" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="D0d-7f-MYj"/>
+                            <constraint firstItem="Lwi-6F-F6v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="D7a-Of-erk"/>
+                            <constraint firstItem="Lwi-6F-F6v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PBo-Oj-sDW"/>
                             <constraint firstItem="P6p-6q-16A" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lnK-PZ-xJs"/>
                             <constraint firstAttribute="trailing" secondItem="P6p-6q-16A" secondAttribute="trailing" id="wLB-oa-CIm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="PinHolderImage" destination="Lwi-6F-F6v" id="i6E-Lw-Bmd"/>
                         <outlet property="mapView" destination="P6p-6q-16A" id="Jzb-EK-IWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="297"/>
+            <point key="canvasLocation" x="243" y="283"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PokeballPinHolder" width="300" height="298"/>
+    </resources>
 </document>

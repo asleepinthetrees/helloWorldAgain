@@ -20,16 +20,34 @@ class DraggablePokeballPin: UIImageView {
     
     var lastLocation:CGPoint?
     var panRecognizer:UIPanGestureRecognizer?
+    var origin:CGPoint
     
-    init(imageIcon: UIImage?, location:CGPoint) {
-        super.init(image: imageIcon)
+    init(location:CGPoint) {
+        UIGraphicsBeginImageContext(Constants.pinImageSize)
+        
+        let pinImage = UIImage(named: "GenericPokeball")!
+        
+        // draw the chosen image in a correctly sized rectangle in the current graphics context
+        pinImage.drawInRect(CGRectMake(0, 0, Constants.pinImageSize.width, Constants.pinImageSize.height))
+        
+        // close the graphics context and return the image
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.origin = location
+
+        super.init(image: resizedImage)
         self.userInteractionEnabled = true
         self.lastLocation = location
         self.panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(DraggablePokeballPin.detectPan(_:)))
-        self.center = location
         self.gestureRecognizers = [panRecognizer!]
-        self.frame = CGRect(x: location.x, y: location.y, width: 20.0, height: 30.0)
+        self.frame = CGRect(x: location.x, y: location.y, width: Constants.pinImageSize.width, height: Constants.pinImageSize.height)
+        self.center = location
+
     }
+    
+
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -38,6 +56,11 @@ class DraggablePokeballPin: UIImageView {
     func detectPan(recognizer:UIPanGestureRecognizer) {
         let translation  = recognizer.translationInView(self.superview!)
         self.center = CGPointMake(lastLocation!.x + translation.x, lastLocation!.y + translation.y)
+        if recognizer.state == .Ended
+        {
+            self.center = origin
+
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -47,7 +70,7 @@ class DraggablePokeballPin: UIImageView {
         // Remember original location
         lastLocation = self.center
     }
-    
+
     
     
 }
