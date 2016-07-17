@@ -22,6 +22,13 @@ extension ViewController: MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MKUserLocation
+        {
+            // Don't proceed with custom pin view
+            return nil
+        }
+        
         // if the annotation is a pokemon annotation
         if let annotation = annotation as? pokemonAnnotation {
             // identifier used to identify views which can be reused
@@ -32,7 +39,7 @@ extension ViewController: MKMapViewDelegate {
                 as MKAnnotationView! {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
-            // else create a new document
+            // else create a new annotation view
             } else {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 
@@ -44,7 +51,9 @@ extension ViewController: MKMapViewDelegate {
                 
                 // set the image of the pin
                 view.image = getPinImage(annotation)
-                view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
+                
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.OpenPinTappedView(_:)))
+                view.addGestureRecognizer(tapGesture)
             }
 
             return view
@@ -72,11 +81,11 @@ extension ViewController: MKMapViewDelegate {
         return resizedImage
     }
     
+    func OpenPinTappedView(annotation : MKAnnotation) {
+        var customView = PinTappedView(frame: CGRect(x: 50, y: 50, width: 200, height: 200), annotation: mapAnnotation)
+        
+        view.addSubview(customView)
+    }
     
-//    func mapView(mapView: MKMapView?, annotationView view: MKAnnotationView?,
-//                 calloutAccessoryControlTapped control: UIControl?) {
-//        let location = view.annotation as! Artwork
-//        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-//        location.mapItem().openInMapsWithLaunchOptions(launchOptions)
-//    }
+    
 }
