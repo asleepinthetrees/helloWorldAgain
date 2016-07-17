@@ -21,9 +21,10 @@ class DraggablePokeballPin: UIImageView {
     var lastLocation:CGPoint?
     var panRecognizer:UIPanGestureRecognizer?
     var origin:CGPoint
-    
+    var delegate:MainViewControllerProtocol?
     init(location:CGPoint) {
         UIGraphicsBeginImageContext(Constants.pinImageSize)
+        
         
         let pinImage = UIImage(named: "GenericPokeball")!
         
@@ -59,7 +60,7 @@ class DraggablePokeballPin: UIImageView {
         if recognizer.state == .Ended
         {
             // create a pokemon at the desired location
-            ViewController.createPokemonAnnotationAtScreenCoordinate(center)
+            delegate?.initPinAddedPopup(center)
             
             // recenter the image to the center
             center = origin

@@ -33,7 +33,7 @@ class PinTappedView: UIView {
         backgroundColor = UIColor.blueColor()
         
         // set the title
-        let textView = UITextView(frame: CGRect(x: 5, y: 5, width: 20, height: 20))
+        let textView = UITextView(frame: CGRect(x: 5, y: 5, width: 200, height: 50))
         textView.text = Title
         self.addSubview(textView)
     }

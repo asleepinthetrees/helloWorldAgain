@@ -17,6 +17,9 @@
 		367FE4301D3AEFC30012A56F /* pokemonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE42F1D3AEFC30012A56F /* pokemonAnnotation.swift */; };
 		367FE4321D3AF2F40012A56F /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4311D3AF2F40012A56F /* VCMapView.swift */; };
 		367FE4341D3B20380012A56F /* PinTappedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4331D3B20380012A56F /* PinTappedView.swift */; };
+		367FE4361D3B43EB0012A56F /* PinAddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4351D3B43EB0012A56F /* PinAddedView.swift */; };
+		367FE43A1D3B455A0012A56F /* serverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4391D3B455A0012A56F /* serverHelper.swift */; };
+		367FE43E1D3B505B0012A56F /* MainViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE43D1D3B505B0012A56F /* MainViewControllerProtocol.swift */; };
 		9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */; };
 		9C3194341D3B132C00B85F27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194331D3B132C00B85F27 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,9 @@
 		367FE42F1D3AEFC30012A56F /* pokemonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pokemonAnnotation.swift; sourceTree = "<group>"; };
 		367FE4311D3AF2F40012A56F /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 		367FE4331D3B20380012A56F /* PinTappedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinTappedView.swift; sourceTree = "<group>"; };
+		367FE4351D3B43EB0012A56F /* PinAddedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAddedView.swift; sourceTree = "<group>"; };
+		367FE4391D3B455A0012A56F /* serverHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serverHelper.swift; sourceTree = "<group>"; };
+		367FE43D1D3B505B0012A56F /* MainViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerProtocol.swift; sourceTree = "<group>"; };
 		9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePokeballPin.swift; sourceTree = "<group>"; };
 		9C3194331D3B132C00B85F27 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +109,9 @@
 				367FE4331D3B20380012A56F /* PinTappedView.swift */,
 				9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */,
 				9C3194331D3B132C00B85F27 /* Constants.swift */,
+				367FE4351D3B43EB0012A56F /* PinAddedView.swift */,
+				367FE4391D3B455A0012A56F /* serverHelper.swift */,
+				367FE43D1D3B505B0012A56F /* MainViewControllerProtocol.swift */,
 			);
 			path = pokemonTracker;
 			sourceTree = "<group>";
@@ -218,10 +227,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				367FE42E1D3AEEC00012A56F /* mapAnnotation.swift in Sources */,
+				367FE43E1D3B505B0012A56F /* MainViewControllerProtocol.swift in Sources */,
 				9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */,
 				367FE40C1D3AE17F0012A56F /* ViewController.swift in Sources */,
 				367FE4321D3AF2F40012A56F /* VCMapView.swift in Sources */,
+				367FE4361D3B43EB0012A56F /* PinAddedView.swift in Sources */,
 				9C3194341D3B132C00B85F27 /* Constants.swift in Sources */,
+				367FE43A1D3B455A0012A56F /* serverHelper.swift in Sources */,
 				367FE4301D3AEFC30012A56F /* pokemonAnnotation.swift in Sources */,
 				367FE4341D3B20380012A56F /* PinTappedView.swift in Sources */,
 				367FE40A1D3AE17F0012A56F /* AppDelegate.swift in Sources */,
