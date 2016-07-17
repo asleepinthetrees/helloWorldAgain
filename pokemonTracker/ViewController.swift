@@ -25,15 +25,13 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     var locationManager = CLLocationManager()
     
     var mostRecentPinLocation : CLLocationCoordinate2D!
+    var mostRecentTappedAnnotation : mapAnnotation!
     
     @IBOutlet weak var PinHolderImage: UIImageView!
     // called once the view has been loaded
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        centerMapOnLocation(initialLocation) // centers the map on a default location the cit in providence
-
-        addPokemonToMap()
+        centerMapOnLocation(Constants.initialLocation)
         mapView.delegate = self
         let draggablePinLocation = CGPoint(x: PinHolderImage.center.x, y: PinHolderImage.center.y )
         let draggablePokeballPin = DraggablePokeballPin(location: draggablePinLocation)
@@ -76,8 +74,8 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
         createPokemonAnnotationAtMapCoordinate(location)
     }
     
-    public func createPokemonAnnotation(title : String, coordinate : CLLocationCoordinate2D) {
-        mapView.addAnnotation(pokemonAnnotation(pokemonName: title, coordinate: mostRecentPinLocation))
+    public func createPokemonAnnotation(type : PokemonType, coordinate : CLLocationCoordinate2D) {
+        mapView.addAnnotation(pokemonAnnotation(type: type, coordinate: mostRecentPinLocation))
 
     }
     
@@ -108,12 +106,6 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
         return resizedImage
     }
     
-    func OpenPinTappedView(annotation : mapAnnotation) {
-        let customView = PinTappedView(frame: CGRect(x: 50, y: 50, width: 200, height: 200), annotation: annotation)
-        
-        view.addSubview(customView)
-    }
-    
     func initPinAddedPopup(screenPoint : CGPoint) {
         let mapPoint = self.view.convertPoint(screenPoint, toCoordinateSpace: mapView)
         mostRecentPinLocation = mapView.convertPoint(mapPoint, toCoordinateFromView: mapView)
@@ -130,19 +122,10 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
             let destinationViewController : PinAddedPopUpViewViewController = segue.destinationViewController as! PinAddedPopUpViewViewController
             destinationViewController.delegate = self
             destinationViewController.coordinate = mostRecentPinLocation
+        } else if segue.identifier == "showPokemonAnnotationDetailView" {
+            let destinationViewController : PokemonDetailView = segue.destinationViewController as! PokemonDetailView
+            destinationViewController.annotation = mostRecentTappedAnnotation as? pokemonAnnotation
         }
-    }
-    
-    
-    // MARK: fake data
-    func getPokemonAnnotations() -> [pokemonAnnotation] {
-        let pokemon = pokemonAnnotation(pokemonName: "squirtle", coordinate: CLLocationCoordinate2D(latitude: 41.827141, longitude: -71.399656))
-        return [pokemon]
-    }
-    
-    func addPokemonToMap() {
-        let pokemonAnnotations = getPokemonAnnotations()
-        mapView.addAnnotations(pokemonAnnotations)
     }
 
 

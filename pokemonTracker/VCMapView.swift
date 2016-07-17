@@ -52,8 +52,8 @@ extension ViewController: MKMapViewDelegate {
                 // set the image of the pin
                 view.image = getPinImage(annotation)
                 
-                //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.OpenPinTappedView(_:)))
-                //view.addGestureRecognizer(tapGesture)
+                view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+                
             }
 
             return view
@@ -61,7 +61,12 @@ extension ViewController: MKMapViewDelegate {
         return nil
     }
     
-    
+    public func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let annotation = view.annotation as? pokemonAnnotation {
+            mostRecentTappedAnnotation = annotation
+            performSegueWithIdentifier("showPokemonAnnotationDetailView", sender: nil)
+        }
+    }
 
     
     

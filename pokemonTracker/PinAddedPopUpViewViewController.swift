@@ -24,7 +24,7 @@ class PinAddedPopUpViewViewController: UIViewController,UITableViewDelegate, UIS
 
     var filtered:[String] = []
     
-    var selected: String!
+    var selected: PokemonType!
     
     var delegate: MainViewControllerProtocol!
     
@@ -124,7 +124,8 @@ class PinAddedPopUpViewViewController: UIViewController,UITableViewDelegate, UIS
             text = data[indexPath.row];
         }
         if let text = text {
-            selected = text
+            print(text)
+            selected = PokemonType.Pidgeot
         }
     }
     

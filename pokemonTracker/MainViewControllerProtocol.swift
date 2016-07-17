@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 import MapKit
 protocol MainViewControllerProtocol {
-    func createPokemonAnnotation(title : String, coordinate : CLLocationCoordinate2D)
+    func createPokemonAnnotation(type : PokemonType, coordinate : CLLocationCoordinate2D)
     func initPinAddedPopup(location : CGPoint)
 }

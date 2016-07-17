@@ -22,6 +22,15 @@ static let pinCalloutOffset = CGPoint(x: -5, y: 5)
 
 }
 
-enum PokemonType {
-    case Squirtle, Pidgeot, Ratatta, Vaporeon, Lapras, Flareon
+public enum PokemonType : String {
+    case Squirtle, Pidgeot, Rattata
+    
+    var image: UIImage {
+        switch self {
+        case .Squirtle: return UIImage(named: "Squirtle")!
+        case .Pidgeot: return UIImage(named: "Pidgeot")!
+        case .Rattata: return UIImage(named: "Rattata")!
+        }
+    }
+
 }
