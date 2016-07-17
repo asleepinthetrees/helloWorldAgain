@@ -19,7 +19,7 @@ extension ViewController: MKMapViewDelegate {
         if let annotation = annotation as? pokemonAnnotation {
             // identifier used to identify views which can be reused
             let identifier = "pokemon"
-            var view: MKPinAnnotationView
+            var view: MKAnnotationView
             // if there is a view we can reuse then reuse that
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
                 as? MKPinAnnotationView {

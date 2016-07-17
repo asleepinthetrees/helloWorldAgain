@@ -25,6 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         centerMapOnLocation(initialLocation)
         addPokemonToMap()
         mapView.delegate = self
+        self.view.addSubview(DraggablePokeballPin(imageIcon: UIImage(named: "GenericPokeball.png"), location: CGPointMake(50, 50)))
     }
 
     override func didReceiveMemoryWarning() {
