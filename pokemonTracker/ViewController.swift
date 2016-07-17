@@ -12,17 +12,18 @@ import MapKit
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: constants
-    let regionRadius: CLLocationDistance = 100 // region radius can be thought of as map zoom
-    let initialLocation : CLLocation = CLLocation(latitude: 41.826820, longitude: -71.402931)
+    let regionRadius: CLLocationDistance = Constants.regionRadius // region radius can be thought of as map zoom
+    let initialLocation : CLLocation = Constants.initialLocation
     
     // MARK: constants for VCMapView
-    let pinImageSize = CGSize(width: 50, height: 50)
-    let pinCalloutOffset = CGPoint(x: -5, y: 5)
+    let pinImageSize = Constants.pinImageSize
+    let pinCalloutOffset = Constants.pinCalloutOffset
     
     // MARK: properties
     @IBOutlet weak var mapView: MKMapView! // the main mapview
     var locationManager = CLLocationManager()
     
+    @IBOutlet weak var PinHolderImage: UIImageView!
     // called once the view has been loaded
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         addPokemonToMap()
         mapView.delegate = self
+        self.view.addSubview(DraggablePokeballPin(location: PinHolderImage.center))
+        
     }
     
     override func viewDidAppear(animated: Bool) {
