@@ -115,21 +115,16 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     }
     
     func initPinAddedPopup(screenPoint : CGPoint) {
-        let mapPoint = self.view.convertPoint(screenPoint, toCoordinateSpace: mapView)
+         let mapPoint = self.view.convertPoint(screenPoint, toCoordinateSpace: mapView)
         mostRecentPinLocation = mapView.convertPoint(mapPoint, toCoordinateFromView: mapView)
-//        let modalViewController = PinAddedPopUpViewViewController(coordinate : coordinate)
-//        let navigationController = UINavigationController(rootViewController: modalViewController)
-//        //navigationController.modalTransitionStyle = .FlipHorizontal
-//        navigationController.modalPresentationStyle = .OverCurrentContext
-//        self.presentViewController(navigationController, animated: true, completion: nil)
-          performSegueWithIdentifier("pinAddedPopUp", sender: nil)
+        performSegueWithIdentifier("ShowPinAddedView", sender: nil)
     }
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "pinAddedPopUp" {
-            let destinationViewController : PinAddedPopUpViewViewController = segue.destinationViewController as! PinAddedPopUpViewViewController
-            destinationViewController.delegate = self
-            destinationViewController.coordinate = mostRecentPinLocation
+        if segue.identifier == "ShowPinAddedView" {
+//            let destinationViewController : PinAddedPopUpViewViewController = segue.destinationViewController as! PinAddedPopUpViewViewController
+//            destinationViewController.delegate = self
+//            destinationViewController.coordinate = mostRecentPinLocation
         }
     }
     

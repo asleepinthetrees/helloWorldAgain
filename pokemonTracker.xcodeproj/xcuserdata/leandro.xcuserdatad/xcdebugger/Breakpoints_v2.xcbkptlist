@@ -19,5 +19,115 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pokemonTracker/PinAddedPopUpViewViewController.swift"
+            timestampString = "490482561.075786"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "PinAddedPopUpViewViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pokemonTracker.PinAddedPopUpViewViewController.__deallocating_deinit"
+                  moduleName = "pokemonTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leandro/Documents/PokemonApp/helloWorldAgain/pokemonTracker/PinAddedPopUpViewViewController.swift"
+                  timestampString = "490482561.08236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pokemonTracker.PinAddedPopUpViewViewController.init (style : __C.UITableViewStyle) -&gt; pokemonTracker.PinAddedPopUpViewViewController"
+                  moduleName = "pokemonTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leandro/Documents/PokemonApp/helloWorldAgain/pokemonTracker/PinAddedPopUpViewViewController.swift"
+                  timestampString = "490482561.082639"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pokemonTracker.PinAddedPopUpViewViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; pokemonTracker.PinAddedPopUpViewViewController"
+                  moduleName = "pokemonTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leandro/Documents/PokemonApp/helloWorldAgain/pokemonTracker/PinAddedPopUpViewViewController.swift"
+                  timestampString = "490482561.082783"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pokemonTracker.PinAddedPopUpViewViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;pokemonTracker.PinAddedPopUpViewViewController&gt;"
+                  moduleName = "pokemonTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leandro/Documents/PokemonApp/helloWorldAgain/pokemonTracker/PinAddedPopUpViewViewController.swift"
+                  timestampString = "490482561.082932"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pokemonTracker/PokemonChooserPresentationController.swift"
+            timestampString = "490483350.683279"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "frameOfPresentedViewInContainerView()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pokemonTracker/PinAddedPopUpViewViewController.swift"
+            timestampString = "490489822.514979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
