@@ -20,6 +20,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P6p-6q-16A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PokeballPinHolder" translatesAutoresizingMaskIntoConstraints="NO" id="Lwi-6F-F6v">
+                                <rect key="frame" x="20" y="20" width="54" height="54"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -30,12 +33,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="PinHolderImage" destination="Lwi-6F-F6v" id="i6E-Lw-Bmd"/>
                         <outlet property="mapView" destination="P6p-6q-16A" id="Jzb-EK-IWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="297"/>
+            <point key="canvasLocation" x="243" y="283"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PokeballPinHolder" width="300" height="298"/>
+    </resources>
 </document>

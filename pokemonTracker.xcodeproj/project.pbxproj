@@ -17,6 +17,8 @@
 		367FE4301D3AEFC30012A56F /* pokemonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE42F1D3AEFC30012A56F /* pokemonAnnotation.swift */; };
 		367FE4321D3AF2F40012A56F /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4311D3AF2F40012A56F /* VCMapView.swift */; };
 		367FE4341D3B20380012A56F /* PinTappedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4331D3B20380012A56F /* PinTappedView.swift */; };
+		9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */; };
+		9C3194341D3B132C00B85F27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194331D3B132C00B85F27 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		367FE42F1D3AEFC30012A56F /* pokemonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pokemonAnnotation.swift; sourceTree = "<group>"; };
 		367FE4311D3AF2F40012A56F /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 		367FE4331D3B20380012A56F /* PinTappedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinTappedView.swift; sourceTree = "<group>"; };
+		9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePokeballPin.swift; sourceTree = "<group>"; };
+		9C3194331D3B132C00B85F27 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				367FE4151D3AE17F0012A56F /* Info.plist */,
 				367FE42D1D3AEEC00012A56F /* mapAnnotation.swift */,
 				367FE4331D3B20380012A56F /* PinTappedView.swift */,
+				9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */,
+				9C3194331D3B132C00B85F27 /* Constants.swift */,
 			);
 			path = pokemonTracker;
 			sourceTree = "<group>";
@@ -212,8 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				367FE42E1D3AEEC00012A56F /* mapAnnotation.swift in Sources */,
+				9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */,
 				367FE40C1D3AE17F0012A56F /* ViewController.swift in Sources */,
 				367FE4321D3AF2F40012A56F /* VCMapView.swift in Sources */,
+				9C3194341D3B132C00B85F27 /* Constants.swift in Sources */,
 				367FE4301D3AEFC30012A56F /* pokemonAnnotation.swift in Sources */,
 				367FE4341D3B20380012A56F /* PinTappedView.swift in Sources */,
 				367FE40A1D3AE17F0012A56F /* AppDelegate.swift in Sources */,
@@ -349,6 +357,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Luke-Murray.pokemonTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -360,6 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Luke-Murray.pokemonTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -406,6 +416,7 @@
 				367FE4251D3AE17F0012A56F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		367FE4261D3AE17F0012A56F /* Build configuration list for PBXNativeTarget "pokemonTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +425,7 @@
 				367FE4281D3AE17F0012A56F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

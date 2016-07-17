@@ -61,6 +61,20 @@ extension ViewController: MKMapViewDelegate {
         return nil
     }
     
+    // MARK: mapping functions
+    func centerMapOnLocation(location: CLLocation) {
+        // region radius is in meters
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    class func createPokemonAnnotationAtScreenCoordinate(location : CGPoint) {
+        
+    }
+
+    
+    // MARK : pin functions
     func getPinImage(annotation : MKAnnotation) -> UIImage {
         var pinImage : UIImage?
         
@@ -81,10 +95,21 @@ extension ViewController: MKMapViewDelegate {
         return resizedImage
     }
     
-    func OpenPinTappedView(annotation : MKAnnotation) {
-        var customView = PinTappedView(frame: CGRect(x: 50, y: 50, width: 200, height: 200), annotation: mapAnnotation)
+    func OpenPinTappedView(annotation : mapAnnotation) {
+        let customView = PinTappedView(frame: CGRect(x: 50, y: 50, width: 200, height: 200), annotation: annotation)
         
         view.addSubview(customView)
+    }
+    
+    // MARK: fake data
+    func getPokemonAnnotations() -> [pokemonAnnotation] {
+        let pokemon = pokemonAnnotation(pokemonName: "squirtle", coordinate: CLLocationCoordinate2D(latitude: 41.827141, longitude: -71.399656))
+        return [pokemon]
+    }
+    
+    func addPokemonToMap() {
+        let pokemonAnnotations = getPokemonAnnotations()
+        mapView.addAnnotations(pokemonAnnotations)
     }
     
     

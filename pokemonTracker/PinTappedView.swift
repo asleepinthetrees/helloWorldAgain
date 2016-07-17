@@ -25,11 +25,9 @@ class PinTappedView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: <#T##NSCoder#>)
-        
-        // setup the view
-        setup()
+        fatalError("init(coder:) has not been implemented")
     }
+    
     
     func setup() {
         backgroundColor = UIColor.blueColor()
