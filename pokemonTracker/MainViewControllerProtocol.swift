@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
+import MapKit
 protocol MainViewControllerProtocol {
-    func createPokemonAnnotationAtScreenCoordinate(location : CGPoint)
+    func createPokemonAnnotation(title : String, coordinate : CLLocationCoordinate2D)
     func initPinAddedPopup(location : CGPoint)
 }

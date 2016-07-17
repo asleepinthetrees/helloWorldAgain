@@ -24,6 +24,8 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     
     var locationManager = CLLocationManager()
     
+    var mostRecentPinLocation : CLLocationCoordinate2D!
+    
     @IBOutlet weak var PinHolderImage: UIImageView!
     // called once the view has been loaded
     override public func viewDidLoad() {
@@ -74,9 +76,14 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
         createPokemonAnnotationAtMapCoordinate(location)
     }
     
+    public func createPokemonAnnotation(title : String, coordinate : CLLocationCoordinate2D) {
+        mapView.addAnnotation(pokemonAnnotation(pokemonName: title, coordinate: mostRecentPinLocation))
+
+    }
+    
+    
     public func createPokemonAnnotationAtMapCoordinate(coordinate : CLLocationCoordinate2D) {
         
-        mapView.addAnnotation(pokemonAnnotation(pokemonName: "test", coordinate: coordinate))
     }
     
     
@@ -107,15 +114,25 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
         view.addSubview(customView)
     }
     
-    func initPinAddedPopup(location : CGPoint) {
-        let mapPoint = self.view.convertPoint(location, toCoordinateSpace: mapView)
-        let location = mapView.convertPoint(mapPoint, toCoordinateFromView: mapView)
-        let popUp=PinAddedView(frame: CGRectMake(50,
-                                self.view.frame.size.height/4,
-                                self.view.frame.size.width - 100,
-                                500), coordinate : location)
-        self.view.addSubview(popUp)
+    func initPinAddedPopup(screenPoint : CGPoint) {
+        let mapPoint = self.view.convertPoint(screenPoint, toCoordinateSpace: mapView)
+        mostRecentPinLocation = mapView.convertPoint(mapPoint, toCoordinateFromView: mapView)
+//        let modalViewController = PinAddedPopUpViewViewController(coordinate : coordinate)
+//        let navigationController = UINavigationController(rootViewController: modalViewController)
+//        //navigationController.modalTransitionStyle = .FlipHorizontal
+//        navigationController.modalPresentationStyle = .OverCurrentContext
+//        self.presentViewController(navigationController, animated: true, completion: nil)
+          performSegueWithIdentifier("pinAddedPopUp", sender: nil)
     }
+    
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "pinAddedPopUp" {
+            let destinationViewController : PinAddedPopUpViewViewController = segue.destinationViewController as! PinAddedPopUpViewViewController
+            destinationViewController.delegate = self
+            destinationViewController.coordinate = mostRecentPinLocation
+        }
+    }
+    
     
     // MARK: fake data
     func getPokemonAnnotations() -> [pokemonAnnotation] {

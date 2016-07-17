@@ -52,8 +52,8 @@ extension ViewController: MKMapViewDelegate {
                 // set the image of the pin
                 view.image = getPinImage(annotation)
                 
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.OpenPinTappedView(_:)))
-                view.addGestureRecognizer(tapGesture)
+                //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.OpenPinTappedView(_:)))
+                //view.addGestureRecognizer(tapGesture)
             }
 
             return view

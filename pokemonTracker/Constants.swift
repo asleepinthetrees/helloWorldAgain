@@ -21,3 +21,7 @@ static let pinCalloutOffset = CGPoint(x: -5, y: 5)
 
 
 }
+
+enum PokemonType {
+    case Squirtle, Pidgeot, Ratatta, Vaporeon, Lapras, Flareon
+}
