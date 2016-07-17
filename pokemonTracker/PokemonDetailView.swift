@@ -12,6 +12,7 @@ class PokemonDetailView: UIViewController {
     
     var annotation : pokemonAnnotation?
 
+    @IBOutlet weak var mainTitle: UITextField!
     
     @IBOutlet weak var pokemonImage: UIImageView!
     
@@ -20,7 +21,7 @@ class PokemonDetailView: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = annotation?.Type.rawValue
+        mainTitle.text = annotation?.Type.rawValue
         pokemonImage.image = annotation?.Type.image
     }
 
