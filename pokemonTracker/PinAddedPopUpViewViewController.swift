@@ -117,8 +117,12 @@ class PinAddedPopUpViewViewController: UIViewController,UITableViewDelegate, UIS
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
-        let text = cell?.textLabel?.text
+        var text : String!
+        if(searchActive){
+            text = filtered[indexPath.row]
+        } else {
+            text = data[indexPath.row];
+        }
         if let text = text {
             selected = text
         }
