@@ -27,7 +27,7 @@
 		9C3194391D3C600500B85F27 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194381D3C600500B85F27 /* OverlayPresentationController.swift */; };
 		9C31943B1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31943A1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift */; };
 		9C31943D1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31943C1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift */; };
-		9C31943F1D3C6AC100B85F27 /* HorizontalSlideViewControllerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31943E1D3C6AC100B85F27 /* HorizontalSlideViewControllerAnimation.swift */; };
+		9C31943F1D3C6AC100B85F27 /* HorizontalSlideLeftViewControllerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31943E1D3C6AC100B85F27 /* HorizontalSlideLeftViewControllerAnimation.swift */; };
 		9C3194411D3C6B8000B85F27 /* SideOverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194401D3C6B8000B85F27 /* SideOverlayPresentationController.swift */; };
 		9C3194431D3C6BE000B85F27 /* SideOverlayTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194421D3C6BE000B85F27 /* SideOverlayTransitioningDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -68,7 +68,7 @@
 		9C3194381D3C600500B85F27 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
 		9C31943A1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTransitioningDelegateOverlayTransitioningDelegate.swift; sourceTree = "<group>"; };
 		9C31943C1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncyViewControllerAnimator.swift; sourceTree = "<group>"; };
-		9C31943E1D3C6AC100B85F27 /* HorizontalSlideViewControllerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSlideViewControllerAnimation.swift; sourceTree = "<group>"; };
+		9C31943E1D3C6AC100B85F27 /* HorizontalSlideLeftViewControllerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSlideLeftViewControllerAnimation.swift; sourceTree = "<group>"; };
 		9C3194401D3C6B8000B85F27 /* SideOverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideOverlayPresentationController.swift; sourceTree = "<group>"; };
 		9C3194421D3C6BE000B85F27 /* SideOverlayTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideOverlayTransitioningDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,7 +150,7 @@
 				9C3194381D3C600500B85F27 /* OverlayPresentationController.swift */,
 				9C31943A1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift */,
 				9C31943C1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift */,
-				9C31943E1D3C6AC100B85F27 /* HorizontalSlideViewControllerAnimation.swift */,
+				9C31943E1D3C6AC100B85F27 /* HorizontalSlideLeftViewControllerAnimation.swift */,
 				9C3194401D3C6B8000B85F27 /* SideOverlayPresentationController.swift */,
 				9C3194421D3C6BE000B85F27 /* SideOverlayTransitioningDelegate.swift */,
 			);
@@ -262,7 +262,7 @@
 				367FE42E1D3AEEC00012A56F /* mapAnnotation.swift in Sources */,
 				367FE43E1D3B505B0012A56F /* MainViewControllerProtocol.swift in Sources */,
 				9C31943D1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift in Sources */,
-				9C31943F1D3C6AC100B85F27 /* HorizontalSlideViewControllerAnimation.swift in Sources */,
+				9C31943F1D3C6AC100B85F27 /* HorizontalSlideLeftViewControllerAnimation.swift in Sources */,
 				9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */,
 				9C31943B1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift in Sources */,
 				367FE4401D3BDFD90012A56F /* PinAddedPopUpViewViewController.swift in Sources */,

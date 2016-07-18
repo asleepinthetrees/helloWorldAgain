@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HorizontalSlideViewControllerAnimation : NSObject, UIViewControllerAnimatedTransitioning {
+class HorizontalSlideLeftViewControllerAnimation : NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.8

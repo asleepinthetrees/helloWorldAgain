@@ -26,7 +26,7 @@ class SideOverlayPresentationController: UIPresentationController {
             self.dimmingView.alpha = 1.0
             }, completion: nil)
     }
-    
+        
     override func dismissalTransitionWillBegin() {
         presentedViewController.transitionCoordinator()?.animateAlongsideTransition({
             context in
