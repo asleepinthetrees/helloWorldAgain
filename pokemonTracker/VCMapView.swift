@@ -45,7 +45,7 @@ extension ViewController: MKMapViewDelegate {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 
                 // let the pin show a callout bubble
-                view.canShowCallout = true
+                // view.canShowCallout = true
                 
                 // offset the callout from the pin
                 view.calloutOffset = pinCalloutOffset
@@ -73,6 +73,15 @@ extension ViewController: MKMapViewDelegate {
             
         }
     }
+    
+    public func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("showPokemonAnnotationDetailView") as! PokemonDetailView!
+        overlayVC.annotation = view.annotation as? pokemonAnnotation
+        prepareSideOverlayVC(overlayVC)
+        presentViewController(overlayVC, animated: true, completion: nil)
+        mapView.deselectAnnotation(view.annotation, animated: false)
+    }
+    
     private func prepareSideOverlayVC(overlayVC: UIViewController) {
         overlayVC.transitioningDelegate = sideOverlayTransitioningDelegate
         overlayVC.modalPresentationStyle = .Custom
