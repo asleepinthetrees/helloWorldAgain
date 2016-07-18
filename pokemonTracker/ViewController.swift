@@ -114,11 +114,11 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
 //        //navigationController.modalTransitionStyle = .FlipHorizontal
 //        navigationController.modalPresentationStyle = .OverCurrentContext
 //        self.presentViewController(navigationController, animated: true, completion: nil)
-          performSegueWithIdentifier("pinAddedPopUp", sender: nil)
+          performSegueWithIdentifier("ShowPinAddedView", sender: nil)
     }
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "pinAddedPopUp" {
+        if segue.identifier == "ShowPinAddedView" {
             let destinationViewController : PinAddedPopUpViewViewController = segue.destinationViewController as! PinAddedPopUpViewViewController
             destinationViewController.delegate = self
             destinationViewController.coordinate = mostRecentPinLocation
