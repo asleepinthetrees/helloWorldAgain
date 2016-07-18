@@ -37,7 +37,7 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
         let draggablePokeballPin = DraggablePokeballPin(location: draggablePinLocation)
         self.view.addSubview(draggablePokeballPin)
         draggablePokeballPin.delegate = self
-        //serverHelper.GetRequest()
+        serverHelper.thisThing()
         
     }
     

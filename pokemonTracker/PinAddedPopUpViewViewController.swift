@@ -13,9 +13,9 @@ class PinAddedPopUpViewViewController: UITableViewController{
     
     
     // MARK : properties
-    var pokemonArray = PokemonDataStore().allPokemons()
+    var pokemonArray = PokemonType.allValues
     let searchController = UISearchController(searchResultsController: nil)
-    var filteredPokemonArray = [String]()
+    var filteredPokemonArray = [PokemonType]()
     var delegate: MainViewControllerProtocol!
     var coordinate: CLLocationCoordinate2D!
     
@@ -61,9 +61,9 @@ class PinAddedPopUpViewViewController: UITableViewController{
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let candy: String
         if searchController.active && searchController.searchBar.text != "" {
-            candy = filteredPokemonArray[indexPath.row]
+            candy = filteredPokemonArray[indexPath.row].rawValue
         } else {
-            candy = pokemonArray[indexPath.row]
+            candy = pokemonArray[indexPath.row].rawValue
         }
         cell.textLabel?.text = candy
         return cell
@@ -72,19 +72,22 @@ class PinAddedPopUpViewViewController: UITableViewController{
     //filters the pokmon based on the search text and adds pokemon to filtered list
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredPokemonArray = pokemonArray.filter { candy in
-            return candy.lowercaseString.containsString(searchText.lowercaseString)
+            return candy.rawValue.lowercaseString.containsString(searchText.lowercaseString)
         }
         
         tableView.reloadData()
     }
     
+    // occurs whenever an item is clicked
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let indexPath = tableView.indexPathForSelectedRow!
         
         let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
-        
-        print(currentCell.textLabel!.text)
+        let pokemonType = PokemonType(rawValue: currentCell.textLabel!.text!)
+        delegate?.createPokemonAnnotation(pokemonType!, coordinate: coordinate)
+        print(currentCell.textLabel!.text  )
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     

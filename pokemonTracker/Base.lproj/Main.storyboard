@@ -35,7 +35,7 @@
                     <connections>
                         <outlet property="PinHolderImage" destination="Lwi-6F-F6v" id="i6E-Lw-Bmd"/>
                         <outlet property="mapView" destination="P6p-6q-16A" id="Jzb-EK-IWO"/>
-                        <segue destination="cc6-8l-vZL" kind="presentation" identifier="showPokemonAnnotationDetailView" modalPresentationStyle="overCurrentContext" id="4y8-f1-Ig7"/>
+                        <segue destination="cc6-8l-vZL" kind="presentation" identifier="showPokemonAnnotationDetailView" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="4y8-f1-Ig7"/>
                         <segue destination="RSy-9p-6C7" kind="presentation" identifier="ShowPinAddedView" id="eTt-Vv-dut"/>
                     </connections>
                 </viewController>

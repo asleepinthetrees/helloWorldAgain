@@ -20,7 +20,6 @@
 		367FE43A1D3B455A0012A56F /* serverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4391D3B455A0012A56F /* serverHelper.swift */; };
 		367FE43E1D3B505B0012A56F /* MainViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE43D1D3B505B0012A56F /* MainViewControllerProtocol.swift */; };
 		367FE4401D3BDFD90012A56F /* PinAddedPopUpViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE43F1D3BDFD90012A56F /* PinAddedPopUpViewViewController.swift */; };
-		367FE4441D3BFB390012A56F /* PokemonDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE4431D3BFB390012A56F /* PokemonDataStore.swift */; };
 		367FE44C1D3C2E6D0012A56F /* PokemonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE44B1D3C2E6D0012A56F /* PokemonDetailView.swift */; };
 		367FE44E1D3C351E0012A56F /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE44D1D3C351E0012A56F /* Vote.swift */; };
 		9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */; };
@@ -56,7 +55,6 @@
 		367FE4391D3B455A0012A56F /* serverHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serverHelper.swift; sourceTree = "<group>"; };
 		367FE43D1D3B505B0012A56F /* MainViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerProtocol.swift; sourceTree = "<group>"; };
 		367FE43F1D3BDFD90012A56F /* PinAddedPopUpViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAddedPopUpViewViewController.swift; sourceTree = "<group>"; };
-		367FE4431D3BFB390012A56F /* PokemonDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDataStore.swift; sourceTree = "<group>"; };
 		367FE44B1D3C2E6D0012A56F /* PokemonDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailView.swift; sourceTree = "<group>"; };
 		367FE44D1D3C351E0012A56F /* Vote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePokeballPin.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				367FE4391D3B455A0012A56F /* serverHelper.swift */,
 				367FE43D1D3B505B0012A56F /* MainViewControllerProtocol.swift */,
 				367FE43F1D3BDFD90012A56F /* PinAddedPopUpViewViewController.swift */,
-				367FE4431D3BFB390012A56F /* PokemonDataStore.swift */,
 				367FE44B1D3C2E6D0012A56F /* PokemonDetailView.swift */,
 				367FE44D1D3C351E0012A56F /* Vote.swift */,
 			);
@@ -246,7 +243,6 @@
 				9C3194341D3B132C00B85F27 /* Constants.swift in Sources */,
 				367FE43A1D3B455A0012A56F /* serverHelper.swift in Sources */,
 				367FE4301D3AEFC30012A56F /* pokemonAnnotation.swift in Sources */,
-				367FE4441D3BFB390012A56F /* PokemonDataStore.swift in Sources */,
 				367FE4341D3B20380012A56F /* PinTappedView.swift in Sources */,
 				367FE40A1D3AE17F0012A56F /* AppDelegate.swift in Sources */,
 			);

@@ -32,5 +32,7 @@ public enum PokemonType : String {
         case .Rattata: return UIImage(named: "Rattata")!
         }
     }
+    
+    static let allValues = [Squirtle, Pidgeot, Rattata]
 
 }
