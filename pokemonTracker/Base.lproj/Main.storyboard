@@ -56,7 +56,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YS9-Eu-VDM">
-                                <rect key="frame" x="20" y="20" width="600" height="654"/>
+                                <rect key="frame" x="20" y="20" width="600" height="792"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UE-lR-ESs">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -79,24 +79,30 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZmO-eh-bKy">
                                         <rect key="frame" x="20" y="624" width="560" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-bp-cnz">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-bp-cnz">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
                                                 <state key="normal" title="Upvote"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzH-PF-8IO">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzH-PF-8IO">
                                                 <rect key="frame" x="280" y="0.0" width="280" height="30"/>
                                                 <state key="normal" title="Downvote"/>
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sNe-Wg-FIA" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="664" width="560" height="128"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Wfa-v5-Brf" firstAttribute="centerX" secondItem="YS9-Eu-VDM" secondAttribute="centerX" id="4ss-YS-KZf"/>
                                     <constraint firstItem="1UE-lR-ESs" firstAttribute="leading" secondItem="YS9-Eu-VDM" secondAttribute="leading" id="ATl-S2-Bps"/>
+                                    <constraint firstItem="sNe-Wg-FIA" firstAttribute="top" secondItem="ZmO-eh-bKy" secondAttribute="bottom" constant="10" id="Kif-Cr-ENt"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Wfa-v5-Brf" secondAttribute="trailing" constant="20" id="Wfc-nz-ctd"/>
                                     <constraint firstItem="Wfa-v5-Brf" firstAttribute="leading" secondItem="YS9-Eu-VDM" secondAttribute="leadingMargin" constant="20" id="ctF-F4-IjA"/>
                                     <constraint firstAttribute="trailing" secondItem="1UE-lR-ESs" secondAttribute="trailing" id="kj0-qc-F56"/>
                                     <constraint firstItem="ZmO-eh-bKy" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="ne6-hn-gad"/>
+                                    <constraint firstItem="sNe-Wg-FIA" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="xLe-6G-xEw"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -109,6 +115,7 @@
                     </view>
                     <connections>
                         <outlet property="PokemonImage" destination="Wfa-v5-Brf" id="lxS-kB-9ia"/>
+                        <outlet property="barChartView" destination="sNe-Wg-FIA" id="9mi-Is-sRq"/>
                         <outlet property="navItem" destination="lzn-0e-RaL" id="oga-b5-rTj"/>
                         <outlet property="pokemonImage" destination="Wfa-v5-Brf" id="dii-FN-gTR"/>
                     </connections>

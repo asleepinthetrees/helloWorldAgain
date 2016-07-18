@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Charts
 
-class PokemonDetailView: UIViewController {
+class PokemonDetailView: UIViewController, ChartViewDelegate {
     
     var annotation : pokemonAnnotation?
 
+    @IBOutlet weak var barChartView: BarChartView!
 
     @IBOutlet weak var navItem: UINavigationItem!
 
@@ -31,6 +33,14 @@ class PokemonDetailView: UIViewController {
         view.layer.shadowOffset = CGSizeMake(0, 0)
         view.layer.shadowRadius = 10
         view.layer.shadowOpacity = 0.5
+        
+        // setup the line chart
+        self.barChartView.delegate = self
+        self.barChartView.descriptionText = "Tap node for details"
+        self.barChartView.descriptionTextColor = UIColor.whiteColor()
+        self.barChartView.gridBackgroundColor = UIColor.darkGrayColor()
+        setChartData((annotation?.Votes)!)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,5 +63,28 @@ class PokemonDetailView: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func setChartData(votes : [Vote]) {
+        self.barChartView.noDataText = "No data provided"
+        
+        var dataEntries: [BarChartDataEntry] = []
+        
+        let startTime = annotation?.InitialTime
+        let currentTime = NSDate()
+        let timeInterval = currentTime.timeIntervalSinceDate(startTime!)
+        for vote in votes {
+            let value = vote.Vote == VoteType.Yes ? 1.0 : -1.0
+            let index = Int((vote.Time.timeIntervalSinceDate(startTime!) / timeInterval) * 10)
+            
+            let dataEntry = BarChartDataEntry(value: value, xIndex: index)
+            dataEntries.append(dataEntry)
+        }
+        
+        let xVals = [1,2,3,4,5,6,7,8,9,10]
+        
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Votes")
+        let chartData = BarChartData(xVals: xVals, dataSet: chartDataSet)
+        barChartView.data = chartData
+    }
 
 }
