@@ -13,10 +13,11 @@ class PokemonDetailView: UIViewController, ChartViewDelegate {
     
     var annotation : pokemonAnnotation?
 
-    @IBOutlet weak var barChartView: BarChartView!
+
 
     @IBOutlet weak var navItem: UINavigationItem!
 
+    @IBOutlet weak var barChartView: BarChartView!
     
     @IBOutlet weak var pokemonImage: UIImageView!
     
@@ -43,6 +44,15 @@ class PokemonDetailView: UIViewController, ChartViewDelegate {
         
     }
 
+    @IBAction func OnUpvoteTouchUp(sender: UIButton) {
+        annotation?.AddUpVote(NSDate())
+        setChartData((annotation?.Votes)!)
+    }
+    
+    @IBAction func OnDownvoteTouchUp(sender: UIButton) {
+        annotation?.AddDownVote(NSDate())
+        setChartData((annotation?.Votes)!)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,8 +75,32 @@ class PokemonDetailView: UIViewController, ChartViewDelegate {
     */
     
     func setChartData(votes : [Vote]) {
-        self.barChartView.noDataText = "No data provided"
         
+        barChartView.animate(xAxisDuration: 0.5, yAxisDuration: 0.5)
+        barChartView.xAxis.drawAxisLineEnabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+
+        barChartView.xAxis.drawLabelsEnabled = false
+
+        barChartView.leftAxis.drawGridLinesEnabled = false
+        barChartView.leftAxis.drawLabelsEnabled = false
+        
+        barChartView.rightAxis.drawGridLinesEnabled = false
+        barChartView.rightAxis.drawLabelsEnabled = false
+        
+        barChartView.leftAxis.drawZeroLineEnabled = true
+        
+        barChartView.leftAxis.drawTopYLabelEntryEnabled = false
+        barChartView.rightAxis.drawTopYLabelEntryEnabled = false
+
+
+
+        //barChartView.leftAxis.drawZeroLineEnabled = false
+        self.barChartView.noDataText = "No data provided"
+        barChartView.doubleTapToZoomEnabled = false
+        barChartView.pinchZoomEnabled = false
+        barChartView.legend.enabled = false
+
         var dataEntries: [BarChartDataEntry] = []
         
         let startTime = annotation?.InitialTime
@@ -76,14 +110,20 @@ class PokemonDetailView: UIViewController, ChartViewDelegate {
             let value = vote.Vote == VoteType.Yes ? 1.0 : -1.0
             let index = Int((vote.Time.timeIntervalSinceDate(startTime!) / timeInterval) * 10)
             
-            let dataEntry = BarChartDataEntry(value: value, xIndex: index)
+            var dataEntry = BarChartDataEntry(value: value, xIndex: index)
+            if dataEntries.contains(dataEntry){
+                dataEntry = BarChartDataEntry(value: Double(dataEntry.value+1), xIndex: index)
+            }
             dataEntries.append(dataEntry)
+            
         }
         
         let xVals = [1,2,3,4,5,6,7,8,9,10]
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Votes")
         let chartData = BarChartData(xVals: xVals, dataSet: chartDataSet)
+        chartData.setDrawValues(false)
+        
         barChartView.data = chartData
     }
 

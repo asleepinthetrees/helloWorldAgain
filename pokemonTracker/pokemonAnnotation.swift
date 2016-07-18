@@ -25,6 +25,14 @@ class pokemonAnnotation: mapAnnotation {
         super.init(title: type.rawValue, coordinate: coordinate)
     }
     
+    func AddUpVote(time: NSDate){
+        Votes.append(Vote(vote: VoteType.Yes, time: time))
+    }
+    
+    func AddDownVote(time: NSDate){
+        Votes.append(Vote(vote: VoteType.No, time: time))
+    }
+    
     //uncomment this to display a subtitle on the annotation
 //    var subtitle: String {
 //        return locationName
