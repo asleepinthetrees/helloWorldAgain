@@ -18,6 +18,7 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     // MARK: constants for VCMapView
     let pinImageSize = Constants.pinImageSize
     let pinCalloutOffset = Constants.pinCalloutOffset
+    let overlayTransitioningDelegate = OverlayTransitioningDelegate()
     
     // MARK: properties
     @IBOutlet weak var mapView: MKMapView! // the main mapview
@@ -114,18 +115,23 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
 //        //navigationController.modalTransitionStyle = .FlipHorizontal
 //        navigationController.modalPresentationStyle = .OverCurrentContext
 //        self.presentViewController(navigationController, animated: true, completion: nil)
-          performSegueWithIdentifier("ShowPinAddedView", sender: nil)
+        
+          //performSegueWithIdentifier("ShowPinAddedView", sender: nil)
+        let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("overlayViewController") as UIViewController!
+        prepareOverlayVC(overlayVC)
+        presentViewController(overlayVC, animated: true, completion: nil)
+
     }
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowPinAddedView" {
-            let destinationViewController : PinAddedPopUpViewViewController = segue.destinationViewController as! PinAddedPopUpViewViewController
-            destinationViewController.delegate = self
-            destinationViewController.coordinate = mostRecentPinLocation
-        } else if segue.identifier == "showPokemonAnnotationDetailView" {
+        if segue.identifier == "showPokemonAnnotationDetailView" {
             let destinationViewController : PokemonDetailView = segue.destinationViewController as! PokemonDetailView
             destinationViewController.annotation = mostRecentTappedAnnotation as? pokemonAnnotation
         }
+    }
+    private func prepareOverlayVC(overlayVC: UIViewController) {
+        overlayVC.transitioningDelegate = overlayTransitioningDelegate
+        overlayVC.modalPresentationStyle = .Custom
     }
 
 

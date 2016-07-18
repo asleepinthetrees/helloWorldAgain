@@ -24,6 +24,9 @@
 		367FE44E1D3C351E0012A56F /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE44D1D3C351E0012A56F /* Vote.swift */; };
 		9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */; };
 		9C3194341D3B132C00B85F27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194331D3B132C00B85F27 /* Constants.swift */; };
+		9C3194391D3C600500B85F27 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194381D3C600500B85F27 /* OverlayPresentationController.swift */; };
+		9C31943B1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31943A1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift */; };
+		9C31943D1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31943C1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		367FE44D1D3C351E0012A56F /* Vote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePokeballPin.swift; sourceTree = "<group>"; };
 		9C3194331D3B132C00B85F27 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9C3194381D3C600500B85F27 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
+		9C31943A1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTransitioningDelegateOverlayTransitioningDelegate.swift; sourceTree = "<group>"; };
+		9C31943C1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncyViewControllerAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		367FE4081D3AE17F0012A56F /* pokemonTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9C3194371D3C5FD900B85F27 /* presentation */,
 				367FE4091D3AE17F0012A56F /* AppDelegate.swift */,
 				367FE40B1D3AE17F0012A56F /* ViewController.swift */,
 				367FE4311D3AF2F40012A56F /* VCMapView.swift */,
@@ -129,6 +136,16 @@
 				367FE4201D3AE17F0012A56F /* Info.plist */,
 			);
 			path = pokemonTrackerTests;
+			sourceTree = "<group>";
+		};
+		9C3194371D3C5FD900B85F27 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9C3194381D3C600500B85F27 /* OverlayPresentationController.swift */,
+				9C31943A1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift */,
+				9C31943C1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift */,
+			);
+			name = presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3194391D3C600500B85F27 /* OverlayPresentationController.swift in Sources */,
 				367FE42E1D3AEEC00012A56F /* mapAnnotation.swift in Sources */,
 				367FE43E1D3B505B0012A56F /* MainViewControllerProtocol.swift in Sources */,
+				9C31943D1D3C60A200B85F27 /* BouncyViewControllerAnimator.swift in Sources */,
 				9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */,
+				9C31943B1D3C607200B85F27 /* OverlayTransitioningDelegateOverlayTransitioningDelegate.swift in Sources */,
 				367FE4401D3BDFD90012A56F /* PinAddedPopUpViewViewController.swift in Sources */,
 				367FE40C1D3AE17F0012A56F /* ViewController.swift in Sources */,
 				367FE44C1D3C2E6D0012A56F /* PokemonDetailView.swift in Sources */,
