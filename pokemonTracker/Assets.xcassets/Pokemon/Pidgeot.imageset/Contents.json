@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Pidgeot.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "pidgeot.png",
       "scale" : "2x"
     },
     {
