@@ -58,21 +58,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YS9-Eu-VDM">
-                                <rect key="frame" x="20" y="20" width="600" height="640"/>
+                                <rect key="frame" x="20" y="20" width="600" height="654"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kna-I6-Moz">
-                                        <rect key="frame" x="288" y="0.0" width="25" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UE-lR-ESs">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <items>
+                                            <navigationItem title="Title" id="lzn-0e-RaL">
+                                                <barButtonItem key="leftBarButtonItem" title="Back To Map" id="aYM-y5-Rcv">
+                                                    <connections>
+                                                        <action selector="BackToMapTapped:" destination="cc6-8l-vZL" id="23C-mQ-f34"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-v5-Brf">
-                                        <rect key="frame" x="20" y="40" width="560" height="560"/>
+                                        <rect key="frame" x="20" y="54" width="560" height="560"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="height" multiplier="1:1" id="qPI-xd-ENP"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="KWy-4t-Eqb">
-                                        <rect key="frame" x="20" y="610" width="560" height="30"/>
+                                        <rect key="frame" x="20" y="624" width="560" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-bp-cnz">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
@@ -87,25 +94,25 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Wfa-v5-Brf" firstAttribute="centerX" secondItem="YS9-Eu-VDM" secondAttribute="centerX" id="4ss-YS-KZf"/>
+                                    <constraint firstItem="1UE-lR-ESs" firstAttribute="leading" secondItem="YS9-Eu-VDM" secondAttribute="leading" id="ATl-S2-Bps"/>
                                     <constraint firstItem="KWy-4t-Eqb" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="FTM-47-1P4"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Wfa-v5-Brf" secondAttribute="trailing" constant="20" id="Wfc-nz-ctd"/>
-                                    <constraint firstItem="Kna-I6-Moz" firstAttribute="centerX" secondItem="YS9-Eu-VDM" secondAttribute="centerX" id="XI3-zs-B1z"/>
                                     <constraint firstItem="Wfa-v5-Brf" firstAttribute="leading" secondItem="YS9-Eu-VDM" secondAttribute="leadingMargin" constant="20" id="ctF-F4-IjA"/>
+                                    <constraint firstAttribute="trailing" secondItem="1UE-lR-ESs" secondAttribute="trailing" id="kj0-qc-F56"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YS9-Eu-VDM" firstAttribute="leading" secondItem="Dpy-Jo-zun" secondAttribute="leading" id="BW8-Ir-kSX"/>
-                            <constraint firstItem="YS9-Eu-VDM" firstAttribute="top" secondItem="UTb-Gf-WNu" secondAttribute="bottom" constant="20" id="DWR-0H-1UH"/>
+                            <constraint firstItem="YS9-Eu-VDM" firstAttribute="top" secondItem="UTb-Gf-WNu" secondAttribute="bottom" id="DWR-0H-1UH"/>
                             <constraint firstAttribute="trailing" secondItem="YS9-Eu-VDM" secondAttribute="trailing" id="rcl-HF-Fd2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="PokemonImage" destination="Wfa-v5-Brf" id="lxS-kB-9ia"/>
-                        <outlet property="mainTitle" destination="Kna-I6-Moz" id="owd-Q1-WIa"/>
+                        <outlet property="navItem" destination="lzn-0e-RaL" id="oga-b5-rTj"/>
                         <outlet property="pokemonImage" destination="Wfa-v5-Brf" id="dii-FN-gTR"/>
-                        <outlet property="title" destination="Kna-I6-Moz" id="q6G-dD-UTq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0M-kT-P3i" userLabel="First Responder" sceneMemberID="firstResponder"/>

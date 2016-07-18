@@ -12,7 +12,9 @@ class PokemonDetailView: UIViewController {
     
     var annotation : pokemonAnnotation?
 
-    @IBOutlet weak var mainTitle: UITextField!
+
+    @IBOutlet weak var navItem: UINavigationItem!
+
     
     @IBOutlet weak var pokemonImage: UIImageView!
     
@@ -21,9 +23,10 @@ class PokemonDetailView: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        mainTitle.text = annotation?.Type.rawValue
+        navItem.title = annotation?.Type.rawValue
         
         pokemonImage.image = annotation?.Type.image
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +35,9 @@ class PokemonDetailView: UIViewController {
     }
     
 
+    @IBAction func BackToMapTapped(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
