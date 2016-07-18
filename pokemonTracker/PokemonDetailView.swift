@@ -22,6 +22,7 @@ class PokemonDetailView: UIViewController {
 
         // Do any additional setup after loading the view.
         mainTitle.text = annotation?.Type.rawValue
+        
         pokemonImage.image = annotation?.Type.image
     }
 
