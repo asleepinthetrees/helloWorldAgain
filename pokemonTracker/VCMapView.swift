@@ -13,6 +13,7 @@ import MapKit
 
 extension ViewController: MKMapViewDelegate {
 
+
     public func mapView(mapView: MKMapView, didUpdateUserLocation
         userLocation: MKUserLocation) {
         var region : MKCoordinateRegion = mapView.region
@@ -44,7 +45,7 @@ extension ViewController: MKMapViewDelegate {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 
                 // let the pin show a callout bubble
-                view.canShowCallout = true
+                // view.canShowCallout = true
                 
                 // offset the callout from the pin
                 view.calloutOffset = pinCalloutOffset
@@ -64,8 +65,27 @@ extension ViewController: MKMapViewDelegate {
     public func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let annotation = view.annotation as? pokemonAnnotation {
             mostRecentTappedAnnotation = annotation
-            performSegueWithIdentifier("showPokemonAnnotationDetailView", sender: nil)
+            //performSegueWithIdentifier("showPokemonAnnotationDetailView", sender: nil)
+            let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("showPokemonAnnotationDetailView") as! PokemonDetailView!
+            overlayVC.annotation = mostRecentTappedAnnotation as? pokemonAnnotation
+            prepareSideOverlayVC(overlayVC)
+            presentViewController(overlayVC, animated: true, completion: nil)
+            
         }
+    }
+    
+    public func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("showPokemonAnnotationDetailView") as! PokemonDetailView!
+        overlayVC.annotation = view.annotation as? pokemonAnnotation
+        prepareSideOverlayVC(overlayVC)
+        presentViewController(overlayVC, animated: true, completion: nil)
+        mapView.deselectAnnotation(view.annotation, animated: false)
+    }
+    
+    private func prepareSideOverlayVC(overlayVC: UIViewController) {
+        overlayVC.transitioningDelegate = sideOverlayTransitioningDelegate
+        overlayVC.modalPresentationStyle = .Custom
+        
     }
 
     

@@ -18,6 +18,9 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     // MARK: constants for VCMapView
     let pinImageSize = Constants.pinImageSize
     let pinCalloutOffset = Constants.pinCalloutOffset
+    let overlayTransitioningDelegate = OverlayTransitioningDelegate()
+    let sideOverlayTransitioningDelegate = SideOverlayTransitioningDelegate()
+
     
     // MARK: properties
     @IBOutlet weak var mapView: MKMapView! // the main mapview
@@ -93,8 +96,9 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
         UIGraphicsBeginImageContext(pinImageSize)
         
         //set the image based on the type and any further information
-        if(annotation is pokemonAnnotation) {
-            pinImage = UIImage(named: "GenericPokeball")!
+        if annotation is pokemonAnnotation {
+            let annotation = annotation as! pokemonAnnotation
+            pinImage = annotation.Type.image
         }
         
         // draw the chosen image in a correctly sized rectangle in the current graphics context
@@ -114,18 +118,25 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
 //        //navigationController.modalTransitionStyle = .FlipHorizontal
 //        navigationController.modalPresentationStyle = .OverCurrentContext
 //        self.presentViewController(navigationController, animated: true, completion: nil)
-          performSegueWithIdentifier("ShowPinAddedView", sender: nil)
+        
+          //performSegueWithIdentifier("ShowPinAddedView", sender: nil)
+        let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("overlayViewController") as! PinAddedPopUpViewViewController!
+        overlayVC.delegate = self
+        overlayVC.coordinate = mostRecentPinLocation
+        prepareOverlayVC(overlayVC)
+        presentViewController(overlayVC, animated: true, completion: nil)
+
     }
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowPinAddedView" {
-            let destinationViewController : PinAddedPopUpViewViewController = segue.destinationViewController as! PinAddedPopUpViewViewController
-            destinationViewController.delegate = self
-            destinationViewController.coordinate = mostRecentPinLocation
-        } else if segue.identifier == "showPokemonAnnotationDetailView" {
+        if segue.identifier == "showPokemonAnnotationDetailView" {
             let destinationViewController : PokemonDetailView = segue.destinationViewController as! PokemonDetailView
             destinationViewController.annotation = mostRecentTappedAnnotation as? pokemonAnnotation
         }
+    }
+    private func prepareOverlayVC(overlayVC: UIViewController) {
+        overlayVC.transitioningDelegate = overlayTransitioningDelegate
+        overlayVC.modalPresentationStyle = .Custom
     }
 
 

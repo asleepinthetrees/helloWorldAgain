@@ -26,7 +26,11 @@ class PokemonDetailView: UIViewController {
         navItem.title = annotation?.Type.rawValue
         
         pokemonImage.image = annotation?.Type.image
-        
+        view.layer.cornerRadius = 2.0
+        view.layer.shadowColor = UIColor.blackColor().CGColor
+        view.layer.shadowOffset = CGSizeMake(0, 0)
+        view.layer.shadowRadius = 10
+        view.layer.shadowOpacity = 0.5
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +40,9 @@ class PokemonDetailView: UIViewController {
     
 
     @IBAction func BackToMapTapped(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        let x = presentingViewController
+        print(x)
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     /*
     // MARK: - Navigation

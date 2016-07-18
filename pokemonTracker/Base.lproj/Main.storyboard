@@ -37,8 +37,6 @@
                     <connections>
                         <outlet property="PinHolderImage" destination="Lwi-6F-F6v" id="i6E-Lw-Bmd"/>
                         <outlet property="mapView" destination="P6p-6q-16A" id="Jzb-EK-IWO"/>
-                        <segue destination="cc6-8l-vZL" kind="presentation" identifier="showPokemonAnnotationDetailView" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="4y8-f1-Ig7"/>
-                        <segue destination="RSy-9p-6C7" kind="presentation" identifier="ShowPinAddedView" id="eTt-Vv-dut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -48,7 +46,7 @@
         <!--Pokemon Detail View-->
         <scene sceneID="ZNj-IV-CR7">
             <objects>
-                <viewController id="cc6-8l-vZL" customClass="PokemonDetailView" customModule="pokemonTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showPokemonAnnotationDetailView" modalTransitionStyle="flipHorizontal" id="cc6-8l-vZL" customClass="PokemonDetailView" customModule="pokemonTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTb-Gf-WNu"/>
                         <viewControllerLayoutGuide type="bottom" id="E56-7d-nw7"/>
@@ -78,15 +76,15 @@
                                             <constraint firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="height" multiplier="1:1" id="qPI-xd-ENP"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="KWy-4t-Eqb">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZmO-eh-bKy">
                                         <rect key="frame" x="20" y="624" width="560" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-bp-cnz">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-bp-cnz">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
                                                 <state key="normal" title="Upvote"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzH-PF-8IO">
-                                                <rect key="frame" x="491" y="0.0" width="69" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzH-PF-8IO">
+                                                <rect key="frame" x="280" y="0.0" width="280" height="30"/>
                                                 <state key="normal" title="Downvote"/>
                                             </button>
                                         </subviews>
@@ -95,10 +93,10 @@
                                 <constraints>
                                     <constraint firstItem="Wfa-v5-Brf" firstAttribute="centerX" secondItem="YS9-Eu-VDM" secondAttribute="centerX" id="4ss-YS-KZf"/>
                                     <constraint firstItem="1UE-lR-ESs" firstAttribute="leading" secondItem="YS9-Eu-VDM" secondAttribute="leading" id="ATl-S2-Bps"/>
-                                    <constraint firstItem="KWy-4t-Eqb" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="FTM-47-1P4"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Wfa-v5-Brf" secondAttribute="trailing" constant="20" id="Wfc-nz-ctd"/>
                                     <constraint firstItem="Wfa-v5-Brf" firstAttribute="leading" secondItem="YS9-Eu-VDM" secondAttribute="leadingMargin" constant="20" id="ctF-F4-IjA"/>
                                     <constraint firstAttribute="trailing" secondItem="1UE-lR-ESs" secondAttribute="trailing" id="kj0-qc-F56"/>
+                                    <constraint firstItem="ZmO-eh-bKy" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="ne6-hn-gad"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -122,7 +120,7 @@
         <!--Master-->
         <scene sceneID="P6O-41-FFI">
             <objects>
-                <tableViewController title="Master" modalTransitionStyle="flipHorizontal" modalPresentationStyle="formSheet" clearsSelectionOnViewWillAppear="NO" id="RSy-9p-6C7" customClass="PinAddedPopUpViewViewController" customModule="pokemonTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="overlayViewController" title="Master" clearsSelectionOnViewWillAppear="NO" id="RSy-9p-6C7" customClass="PinAddedPopUpViewViewController" customModule="pokemonTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="odP-QR-Qyu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,7 +171,6 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </navigationItem>
-                    <value key="contentSizeForViewInPopover" type="size" width="200" height="400"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SP3-AZ-Pyj" sceneMemberID="firstResponder"/>
             </objects>

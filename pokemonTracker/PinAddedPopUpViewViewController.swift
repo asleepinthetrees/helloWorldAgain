@@ -31,6 +31,11 @@ class PinAddedPopUpViewViewController: UITableViewController{
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        view.layer.cornerRadius = 5.0
+        view.layer.shadowColor = UIColor.blackColor().CGColor
+        view.layer.shadowOffset = CGSizeMake(0, 0)
+        view.layer.shadowRadius = 10
+        view.layer.shadowOpacity = 0.5
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -87,7 +92,9 @@ class PinAddedPopUpViewViewController: UITableViewController{
         let pokemonType = PokemonType(rawValue: currentCell.textLabel!.text!)
         delegate?.createPokemonAnnotation(pokemonType!, coordinate: coordinate)
         print(currentCell.textLabel!.text  )
-        dismissViewControllerAnimated(true, completion: nil)
+        //dismissViewControllerAnimated(true, completion: nil)
+        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     
