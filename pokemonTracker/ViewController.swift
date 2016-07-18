@@ -31,6 +31,8 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     var mostRecentTappedAnnotation : mapAnnotation!
     
     @IBOutlet weak var PinHolderImage: UIImageView!
+    
+    
     // called once the view has been loaded
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,8 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
         self.view.addSubview(draggablePokeballPin)
         draggablePokeballPin.delegate = self
         serverHelper.thisThing()
+        
+    
         
     }
     
