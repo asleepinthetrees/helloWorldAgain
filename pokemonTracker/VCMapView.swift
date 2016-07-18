@@ -70,11 +70,13 @@ extension ViewController: MKMapViewDelegate {
             overlayVC.annotation = mostRecentTappedAnnotation as? pokemonAnnotation
             prepareSideOverlayVC(overlayVC)
             presentViewController(overlayVC, animated: true, completion: nil)
+            
         }
     }
     private func prepareSideOverlayVC(overlayVC: UIViewController) {
         overlayVC.transitioningDelegate = sideOverlayTransitioningDelegate
         overlayVC.modalPresentationStyle = .Custom
+        
     }
 
     
