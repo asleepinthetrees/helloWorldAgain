@@ -22,7 +22,13 @@ class PokemonDetailView: UIViewController {
 
         // Do any additional setup after loading the view.
         mainTitle.text = annotation?.Type.rawValue
+        
         pokemonImage.image = annotation?.Type.image
+        view.layer.cornerRadius = 2.0
+        view.layer.shadowColor = UIColor.blackColor().CGColor
+        view.layer.shadowOffset = CGSizeMake(0, 0)
+        view.layer.shadowRadius = 10
+        view.layer.shadowOpacity = 0.5
     }
 
     override func didReceiveMemoryWarning() {

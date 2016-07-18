@@ -13,6 +13,7 @@ import MapKit
 
 extension ViewController: MKMapViewDelegate {
 
+
     public func mapView(mapView: MKMapView, didUpdateUserLocation
         userLocation: MKUserLocation) {
         var region : MKCoordinateRegion = mapView.region
@@ -64,8 +65,16 @@ extension ViewController: MKMapViewDelegate {
     public func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let annotation = view.annotation as? pokemonAnnotation {
             mostRecentTappedAnnotation = annotation
-            performSegueWithIdentifier("showPokemonAnnotationDetailView", sender: nil)
+            //performSegueWithIdentifier("showPokemonAnnotationDetailView", sender: nil)
+            let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("showPokemonAnnotationDetailView") as! PokemonDetailView!
+            overlayVC.annotation = mostRecentTappedAnnotation as? pokemonAnnotation
+            prepareSideOverlayVC(overlayVC)
+            presentViewController(overlayVC, animated: true, completion: nil)
         }
+    }
+    private func prepareSideOverlayVC(overlayVC: UIViewController) {
+        overlayVC.transitioningDelegate = sideOverlayTransitioningDelegate
+        overlayVC.modalPresentationStyle = .Custom
     }
 
     

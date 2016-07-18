@@ -19,6 +19,8 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     let pinImageSize = Constants.pinImageSize
     let pinCalloutOffset = Constants.pinCalloutOffset
     let overlayTransitioningDelegate = OverlayTransitioningDelegate()
+    let sideOverlayTransitioningDelegate = SideOverlayTransitioningDelegate()
+
     
     // MARK: properties
     @IBOutlet weak var mapView: MKMapView! // the main mapview
@@ -117,7 +119,9 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
 //        self.presentViewController(navigationController, animated: true, completion: nil)
         
           //performSegueWithIdentifier("ShowPinAddedView", sender: nil)
-        let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("overlayViewController") as UIViewController!
+        let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("overlayViewController") as! PinAddedPopUpViewViewController!
+        overlayVC.delegate = self
+        overlayVC.coordinate = mostRecentPinLocation
         prepareOverlayVC(overlayVC)
         presentViewController(overlayVC, animated: true, completion: nil)
 
