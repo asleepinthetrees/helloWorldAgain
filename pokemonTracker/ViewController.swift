@@ -96,8 +96,9 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
         UIGraphicsBeginImageContext(pinImageSize)
         
         //set the image based on the type and any further information
-        if(annotation is pokemonAnnotation) {
-            pinImage = UIImage(named: "GenericPokeball")!
+        if annotation is pokemonAnnotation {
+            let annotation = annotation as! pokemonAnnotation
+            pinImage = annotation.Type.image
         }
         
         // draw the chosen image in a correctly sized rectangle in the current graphics context

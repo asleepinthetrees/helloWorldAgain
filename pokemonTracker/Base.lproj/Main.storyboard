@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -76,37 +76,27 @@
                                             <constraint firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="height" multiplier="1:1" id="qPI-xd-ENP"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="KWy-4t-Eqb">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZmO-eh-bKy">
                                         <rect key="frame" x="20" y="624" width="560" height="30"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2tL-xZ-MjB">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmO-eh-bKy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-bp-cnz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="491" height="30"/>
-                                                                <state key="normal" title="Upvote"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzH-PF-8IO">
-                                                                <rect key="frame" x="491" y="0.0" width="69" height="30"/>
-                                                                <state key="normal" title="Downvote"/>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-bp-cnz">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                                <state key="normal" title="Upvote"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzH-PF-8IO">
+                                                <rect key="frame" x="280" y="0.0" width="280" height="30"/>
+                                                <state key="normal" title="Downvote"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Wfa-v5-Brf" firstAttribute="centerX" secondItem="YS9-Eu-VDM" secondAttribute="centerX" id="4ss-YS-KZf"/>
                                     <constraint firstItem="1UE-lR-ESs" firstAttribute="leading" secondItem="YS9-Eu-VDM" secondAttribute="leading" id="ATl-S2-Bps"/>
-                                    <constraint firstItem="KWy-4t-Eqb" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="FTM-47-1P4"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Wfa-v5-Brf" secondAttribute="trailing" constant="20" id="Wfc-nz-ctd"/>
                                     <constraint firstItem="Wfa-v5-Brf" firstAttribute="leading" secondItem="YS9-Eu-VDM" secondAttribute="leadingMargin" constant="20" id="ctF-F4-IjA"/>
                                     <constraint firstAttribute="trailing" secondItem="1UE-lR-ESs" secondAttribute="trailing" id="kj0-qc-F56"/>
+                                    <constraint firstItem="ZmO-eh-bKy" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="ne6-hn-gad"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -140,18 +130,18 @@
                                 <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OfJ-NH-PzC" id="Oko-uK-65E">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zgf-py-2rf">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TvI-4D-JV1">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
