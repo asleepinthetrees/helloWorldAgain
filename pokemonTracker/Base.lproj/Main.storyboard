@@ -55,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YS9-Eu-VDM">
-                                <rect key="frame" x="20" y="20" width="600" height="344"/>
+                                <rect key="frame" x="20" y="17" width="600" height="534"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1UE-lR-ESs">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -70,25 +70,33 @@
                                         </items>
                                     </navigationBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yoy-xs-fXE">
-                                        <rect key="frame" x="275" y="54" width="50" height="250"/>
+                                        <rect key="frame" x="180" y="54" width="240" height="440"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-v5-Brf">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="height" multiplier="1:1" id="qPI-xd-ENP"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exf-M4-bHa" customClass="BarChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="50" width="50" height="200"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="di9-ap-bOz" customClass="BarChartView" customModule="Charts">
+                                                <rect key="frame" x="0.0" y="240" width="240" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PF3-VK-3hh" customClass="BarChartView" customModule="Charts">
+                                                <rect key="frame" x="0.0" y="340" width="240" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="exf-M4-bHa" firstAttribute="top" secondItem="Wfa-v5-Brf" secondAttribute="bottom" constant="70" id="beQ-g9-6xV"/>
+                                            <constraint firstItem="PF3-VK-3hh" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="Vzw-T1-X76"/>
+                                            <constraint firstItem="PF3-VK-3hh" firstAttribute="top" secondItem="di9-ap-bOz" secondAttribute="bottom" constant="-10" id="cHV-Hk-DST"/>
+                                            <constraint firstItem="di9-ap-bOz" firstAttribute="width" secondItem="Wfa-v5-Brf" secondAttribute="width" id="r8H-ib-Oed"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZmO-eh-bKy">
-                                        <rect key="frame" x="231" y="314" width="138" height="30"/>
+                                        <rect key="frame" x="231" y="504" width="138" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-bp-cnz">
                                                 <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
@@ -121,9 +129,10 @@
                     </view>
                     <connections>
                         <outlet property="PokemonImage" destination="Wfa-v5-Brf" id="lxS-kB-9ia"/>
-                        <outlet property="barChartView" destination="exf-M4-bHa" id="kCe-nC-EzZ"/>
+                        <outlet property="bottomBarChartView" destination="PF3-VK-3hh" id="uuf-8L-slJ"/>
                         <outlet property="navItem" destination="lzn-0e-RaL" id="oga-b5-rTj"/>
                         <outlet property="pokemonImage" destination="Wfa-v5-Brf" id="dii-FN-gTR"/>
+                        <outlet property="topBarChartView" destination="di9-ap-bOz" id="mrb-5L-5YL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0M-kT-P3i" userLabel="First Responder" sceneMemberID="firstResponder"/>

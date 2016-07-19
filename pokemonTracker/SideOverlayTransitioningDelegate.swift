@@ -9,7 +9,7 @@
 import UIKit
 
 class SideOverlayTransitioningDelegate : NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
-    let presenting = false;
+    var presenting:Bool = true;
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.8
     }
@@ -18,44 +18,62 @@ class SideOverlayTransitioningDelegate : NSObject, UIViewControllerAnimatedTrans
         
         // get reference to our fromView, toView and the container view that we should perform the transition in
         let container = transitionContext.containerView()
-        let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         
-        // set up from 2D transforms that we'll use in the animation
-        let offScreenRight = CGAffineTransformMakeTranslation(container!.frame.width, 0)
-        let offScreenLeft = CGAffineTransformMakeTranslation(-container!.frame.width, 0)
+
         
-        
-        // add the both views to our view controller
-        //container!.addSubview(toView)
-        container!.addSubview(fromView)
-        
-        // get the duration of the animation
-        // DON'T just type '0.5s' -- the reason why won't make sense until the next post
-        // but for now it's important to just follow this approach
-        let duration = self.transitionDuration(transitionContext)
-        
-        // perform the animation!
-        // for this example, just slid both fromView and toView to the left at the same time
-        // meaning fromView is pushed off the screen and toView slides into view
-        // we also use the block animation usingSpringWithDamping for a little bounce
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [], animations: {
+        if self.presenting == true {
+            let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
+            container!.addSubview(toView)
             
-            // slide fromView off either the left or right edge of the screen
-            // depending if we're presenting or dismissing this view
-            if (self.presenting){
-                fromView.transform = offScreenLeft
-            }
-            else {
-                fromView.transform = offScreenRight
-            }
+            // set up from 2D transforms that we'll use in the animation
+            let offScreenLeft = CGAffineTransformMakeTranslation(-container!.frame.width + 30, 0)
             
-            
-            }, completion: { finished in
+            // get the duration of the animation
+            // DON'T just type '0.5s' -- the reason why won't make sense until the next post
+            // but for now it's important to just follow this approach
+            //let duration = self.transitionDuration(transitionContext)
+            let duration = 0.3
+
+
+            UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
                 
-                // tell our transitionContext object that we've finished animating
-                transitionContext.completeTransition(true)
+                // slide fromView off either the left or right edge of the screen
+                // depending if we're presenting or dismissing this view
+
+                toView.transform = offScreenLeft
+                }, completion: { finished in
+                    
+                    // tell our transitionContext object that we've finished animating
+                    transitionContext.completeTransition(true)
+                    
+            })
+        }
+        else {
+            let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
+
+            container!.addSubview(fromView)
+            
+            // set up from 2D transforms that we'll use in the animation
+            let offScreenRight = CGAffineTransformMakeTranslation(container!.frame.width, 0)
+            
+            // get the duration of the animation
+            // DON'T just type '0.5s' -- the reason why won't make sense until the next post
+            // but for now it's important to just follow this approach
+            let duration = self.transitionDuration(transitionContext)
+
+            UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
                 
-        })
+                // slide fromView off either the right
+                    fromView.transform = offScreenRight
+                
+                }, completion: { finished in
+                    // tell our transitionContext object that we've finished animating
+                    transitionContext.completeTransition(true)
+            })
+        }
+        
+        
+       
         
     }
     
@@ -68,9 +86,12 @@ class SideOverlayTransitioningDelegate : NSObject, UIViewControllerAnimatedTrans
     }
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController)-> UIViewControllerAnimatedTransitioning? {
-        return HorizontalSlideLeftViewControllerAnimation()
+        self.presenting = true
+        return self
     }
+    
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.presenting = false
         return self
     }
     

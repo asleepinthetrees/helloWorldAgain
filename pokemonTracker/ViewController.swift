@@ -82,7 +82,9 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     }
     
     public func createPokemonAnnotation(type : PokemonType, coordinate : CLLocationCoordinate2D) {
-        mapView.addAnnotation(pokemonAnnotation(type: type, coordinate: mostRecentPinLocation))
+        let annotation = pokemonAnnotation(type: type, coordinate: mostRecentPinLocation)
+        annotation.AddUpVote(NSDate())
+        mapView.addAnnotation(annotation)
 
     }
     

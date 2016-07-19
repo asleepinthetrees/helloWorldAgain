@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pokemonTracker/PokemonDetailView.swift"
-            timestampString = "490575090.489508"
+            timestampString = "490585618.450363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "BackToMapTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "pokemonTracker/PokemonDetailView.swift"
-            timestampString = "490578585.641421"
+            filePath = "pokemonTracker/SideOverlayTransitioningDelegate.swift"
+            timestampString = "490589505.681622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "setChartData(_:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "animationControllerForPresentedController(_:presentingController:sourceController:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
