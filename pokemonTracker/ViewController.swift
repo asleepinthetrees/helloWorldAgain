@@ -8,12 +8,14 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 public class ViewController: UIViewController, CLLocationManagerDelegate, MainViewControllerProtocol {
 
     // MARK: constants
     let regionRadius: CLLocationDistance = Constants.regionRadius // region radius can be thought of as map zoom
     let initialLocation : CLLocation = Constants.initialLocation
+    
     
     // MARK: constants for VCMapView
     let pinImageSize = Constants.pinImageSize
@@ -37,14 +39,13 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
     override public func viewDidLoad() {
         super.viewDidLoad()
         centerMapOnLocation(Constants.initialLocation)
+        serverHelper.Search(Constants.initialLocation.coordinate.latitude.description, longitude: Constants.initialLocation.coordinate.longitude.description)
         mapView.delegate = self
         let draggablePinLocation = CGPoint(x: PinHolderImage.center.x, y: PinHolderImage.center.y )
         let draggablePokeballPin = DraggablePokeballPin(location: draggablePinLocation)
         self.view.addSubview(draggablePokeballPin)
         draggablePokeballPin.delegate = self
-        serverHelper.thisThing()
-        
-    
+        // Called server this thing
         
     }
     
@@ -124,6 +125,11 @@ public class ViewController: UIViewController, CLLocationManagerDelegate, MainVi
 //        self.presentViewController(navigationController, animated: true, completion: nil)
         
           //performSegueWithIdentifier("ShowPinAddedView", sender: nil)
+        let coordinatePoint = mapView.convertPoint(screenPoint, toCoordinateFromView: mapView)
+        serverHelper.AddPokemon(coordinatePoint.latitude.description, longitude: coordinatePoint.longitude.description)
+        
+        serverHelper.Search(Constants.initialLocation.coordinate.latitude.description, longitude: Constants.initialLocation.coordinate.longitude.description)
+
         let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("overlayViewController") as! PinAddedPopUpViewViewController!
         overlayVC.delegate = self
         overlayVC.coordinate = mostRecentPinLocation

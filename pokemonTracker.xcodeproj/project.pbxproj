@@ -23,6 +23,7 @@
 		367FE44C1D3C2E6D0012A56F /* PokemonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE44B1D3C2E6D0012A56F /* PokemonDetailView.swift */; };
 		367FE44E1D3C351E0012A56F /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367FE44D1D3C351E0012A56F /* Vote.swift */; };
 		36B79EA01D3D6587006D8C75 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B79E9F1D3D6587006D8C75 /* Charts.framework */; };
+		3A88634B1D3DA1EA005DB292 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A88634A1D3DA1EA005DB292 /* CoreLocation.framework */; };
 		66A379C332019976178DE142 /* Pods_pokemonTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC887D4953AED8BCF1CEA302 /* Pods_pokemonTrackerTests.framework */; };
 		9C3194321D3B0FBF00B85F27 /* DraggablePokeballPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */; };
 		9C3194341D3B132C00B85F27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3194331D3B132C00B85F27 /* Constants.swift */; };
@@ -68,6 +69,7 @@
 		367FE44B1D3C2E6D0012A56F /* PokemonDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailView.swift; sourceTree = "<group>"; };
 		367FE44D1D3C351E0012A56F /* Vote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		36B79E9F1D3D6587006D8C75 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Charts/Charts.framework"; sourceTree = "<group>"; };
+		3A88634A1D3DA1EA005DB292 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		602EF0FDDC172CBB768FA235 /* Pods-pokemonTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokemonTracker/Pods-pokemonTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		9C3194311D3B0FBF00B85F27 /* DraggablePokeballPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePokeballPin.swift; sourceTree = "<group>"; };
 		9C3194331D3B132C00B85F27 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A88634B1D3DA1EA005DB292 /* CoreLocation.framework in Frameworks */,
 				36B79EA01D3D6587006D8C75 /* Charts.framework in Frameworks */,
 				9E909252BC1D96EBF92516C1 /* Pods_pokemonTracker.framework in Frameworks */,
 			);
@@ -162,6 +165,7 @@
 		6AC2FC0F41F1B77D5512A6FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A88634A1D3DA1EA005DB292 /* CoreLocation.framework */,
 				36B79E9F1D3D6587006D8C75 /* Charts.framework */,
 				E82C01643FF61DAD8C54CA17 /* Pods_pokemonTracker.framework */,
 				CC887D4953AED8BCF1CEA302 /* Pods_pokemonTrackerTests.framework */,

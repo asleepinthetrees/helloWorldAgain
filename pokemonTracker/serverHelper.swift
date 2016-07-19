@@ -22,10 +22,20 @@ public class serverHelper  {
         task.resume()
     }
     
-    public class func thisThing() {
-        let mapDict = [ "1":"First", "2":"Second"]
+    public class func Search(latitude : String, longitude : String) {
+        let dict = ["search":"anything", "x":latitude, "y":longitude]
+        thisThing(dict)
         
-        let json = [ "title":"ABC" , "dict": mapDict ]
+    }
+    
+    public class func AddPokemon(latitude : String, longitude : String) {
+        let dict = ["add":"anything", "x":latitude, "y":longitude]
+        thisThing(dict)
+
+    }
+    
+    public class func thisThing(dict : NSDictionary) {
+        let json = dict
         var jsonData : NSData?
         
         do  {
